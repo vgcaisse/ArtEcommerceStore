@@ -12,8 +12,6 @@ import { Items } from './pages/items/items';
 //context provider
 import { ShopContextProvider } from './context/shop-context';
 
-
-
 function App() {
   return (
     <div className="App">
