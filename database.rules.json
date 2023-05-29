@@ -1,0 +1,20 @@
+{
+    "rules": {
+      "art": {
+        "$artId": {
+          "title": {
+            ".validate": "newData.isString()"
+          },
+          "description": {
+            ".validate": "newData.isString()"
+          },
+          "price": {
+            ".validate": "newData.isNumber()"
+          },
+          "image": {
+            ".validate": "newData.isString()"
+          }
+        }
+      }
+    }
+  }

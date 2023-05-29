@@ -5,30 +5,30 @@ import product4 from './assets/4.png'
 
 export const PRODUCT = [
     {
-        id: 1,
+        productId: 1,
         productName: "Waves of Separation",
         price: 19.99,
         productImage: product1,
         description: "general description of item",
     },
     {
-        id: 2,
+        productId: 2,
         productName: "Can you say Gauranga!",
-        price: 19.99,
+        price: 9.99,
         productImage: product2,
         description: "general description of item",
     },
     {
-        id: 3,
+        productId: 3,
         productName: "Son of Indra",
-        price: 19.99,
+        price: 39.99,
         productImage: product3,
         description: "general description of item",
     },
     {
-        id: 4,
+        productId: 4,
         productName: "Bishma Resting",
-        price: 19.99,
+        price: 24.99,
         productImage: product4,
         description: "general description of item",
     },

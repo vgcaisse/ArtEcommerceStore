@@ -1,7 +1,6 @@
 import React from "react";
 import { PRODUCT } from "../../products";
 import { Product } from "./product";
-import { Link } from "react-router-dom";
 import "./shop.css";
 
 export const Shop = () => {
@@ -11,8 +10,8 @@ export const Shop = () => {
         <h1>VC's Art Store</h1>
       </div>
       <div className="products">
-        {PRODUCT.map((product) => (
-          <Product data={product} />
+        {PRODUCT.map((product, index) => (
+          <Product key={index} data={product} />
         ))}
       </div>
     </div>
