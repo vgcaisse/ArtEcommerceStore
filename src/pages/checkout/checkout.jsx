@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import emailjs from "emailjs-com";
 // import "./checkoutForm.css";
 
 export const CheckoutForm = () => {
@@ -19,7 +20,28 @@ export const CheckoutForm = () => {
 
     // After processing the form, you can navigate to a success page or perform any other necessary actions
     // Here, we navigate back to the home page
-    navigate("/");
+
+    // // Send email using emailjs-com
+    // const templateParams = {
+    //   fullName,
+    //   email,
+    //   address,
+    //   city,
+    //   zipCode,
+    // };
+
+    // emailjs
+    //   .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams, "YOUR_USER_ID")
+    //   .then((response) => {
+    //     console.log("Email sent successfully!", response.text);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error sending email:", error);
+    //   });
+
+    // After processing the form and sending the email, you can navigate to a success page or perform any other necessary actions
+    // Here, we navigate back to the home page
+    navigate("/thankyou");
   };
 
   return (

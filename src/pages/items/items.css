@@ -1,3 +1,27 @@
-.items {
-    color: green;
+.items-container {
+  margin-top: 5rem;
+  padding: 20px;
+}
+
+.items-title {
+  padding-bottom: 10%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cartPageButtons {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  margin: 2%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }

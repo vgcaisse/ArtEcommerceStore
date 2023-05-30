@@ -23,7 +23,7 @@ export const ShopContextProvider = (props) => {
       }
     }
 
-    return Math.ceil(totalAmount * 100) / 100; //math.ceil is used to get rid of the flouting point number
+    return Math.ceil(totalAmount * 100) / 100;
   };
 
   const addToCart = (itemId) => {
@@ -34,17 +34,21 @@ export const ShopContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
-  const amountChange = (newAmount, itemID) => {
-    setCartItems((prev) => ({ ...prev, [itemID]: newAmount }));
+  const amountChange = (newAmount, itemId) => {
+    if (!isNaN(newAmount) && newAmount >= 0) {
+      setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+    }
   };
 
-  console.log(getCartTotal(props.totalAmount));
+  const isCartEmpty = Object.values(cartItems).every((item) => item === 0);
+
   const contextValue = {
     cartItems,
     addToCart,
     removeFromCart,
     amountChange,
     getCartTotal,
+    isCartEmpty,
   };
 
   return (
@@ -53,3 +57,4 @@ export const ShopContextProvider = (props) => {
     </ShopContext.Provider>
   );
 };
+

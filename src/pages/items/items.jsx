@@ -1,26 +1,38 @@
+
 import React from "react";
 import { PRODUCT } from "../../products";
 import { Description } from "./description";
-import "./items.css";
 import { useNavigate } from "react-router-dom";
+import "./items.css";
 
 export const Items = (props) => {
   const navigate = useNavigate();
+  const { productId } = props;
+
+  const product = PRODUCT.find((product) => product.id === productId);
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
   const handleClick = () => {
-    navigate(`/`);
+    navigate("/");
   };
-  // const { productId } = props.data;
+
   return (
-    <div className="items">
-      <div className="itemsTitle">
+    <div className="items-container">
+      <div className="items-title">
         <h1>Description</h1>
       </div>
       <div className="products">
-        {PRODUCT.map((description) => (
-          <Description data={description} />
-        ))}
+        <Description data={product} />
       </div>
-      <button onClick={handleClick}>Continue Shopping</button>
+      <button className="cartPageButtons" onClick={handleClick}>
+        Continue Shopping
+      </button>
+      <button className="cartPageButtons" onClick={() => navigate("/cart")}>
+        Your Cart
+      </button>
     </div>
   );
 };

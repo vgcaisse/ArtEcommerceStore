@@ -5,6 +5,7 @@
   }
   
   .products {
+    /* padding-top: 50%; */
     width: 100%;
     height: auto;
     display: grid;
@@ -24,6 +25,7 @@
   }
   
   .product img {
+    
     width: 400px;
     border: solid 2px black;
     box-shadow: 10px 5px 10px black;

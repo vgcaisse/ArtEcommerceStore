@@ -6,10 +6,19 @@ import { CartItem } from "./cart-item";
 import "./cart.css";
 
 export const Cart = () => {
-  const { cartItems, getCartTotal } = useContext(ShopContext);
+  const { cartItems, getCartTotal, isCartEmpty } = useContext(ShopContext);
   const totalAmount = getCartTotal();
 
   const navigate = useNavigate();
+
+   const handleCheckout = () => {
+    if (isCartEmpty) {
+      // Display a message or perform any desired action
+      console.log("Cannot checkout with an empty cart");
+      return;
+    }
+    navigate("/checkout");
+  };
 
   return (
     <div className="cart">
@@ -29,7 +38,10 @@ export const Cart = () => {
           {totalAmount}
         </h1>
         <button onClick={() => navigate("/")}>Continue shopping</button>
-        <button onClick={() => navigate("/checkout")}>Checkout</button>
+        <button onClick={handleCheckout} disabled={isCartEmpty}>
+          Checkout
+        </button>
+        {isCartEmpty && <p>Please add items to the cart before checking out.</p>}
       </div>
     </div>
   );
