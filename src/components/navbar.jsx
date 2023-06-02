@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import { ShoppingCart } from "phosphor-react";
 import "./navbar.css";
 
@@ -13,13 +13,21 @@ export const Navbar = () => {
 
   return (
     <div className="navbar">
+      <h1 className="navbar-title">VC Artstore</h1>
       <div className="menu-icon" onClick={toggleMenu}>
         <FiMenu size={32} />
       </div>
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className="close-icon" onClick={toggleMenu}>
-          <FiMenu size={32} />
+        <div className="menu-containter" onClick={toggleMenu}>
+          <div className="menu-icon">
+            {isOpen ? (
+              <FiX size={32} className="close-icon" />
+            ) : (
+              <FiMenu size={32} />
+            )}
+          </div>
         </div>
+
         <ul className="sidebar-menu" onClick={toggleMenu}>
           <li>
             <Link to="/">Shop</Link>

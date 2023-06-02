@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import emailjs from "emailjs-com";
-// import "./checkoutForm.css";
+import "./checkoutForm.css";
 
 export const CheckoutForm = () => {
   const [fullName, setFullName] = useState("");

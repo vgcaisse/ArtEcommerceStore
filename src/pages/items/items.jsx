@@ -1,4 +1,3 @@
-
 import React from "react";
 import { PRODUCT } from "../../products";
 import { Description } from "./description";
@@ -21,10 +20,7 @@ export const Items = (props) => {
 
   return (
     <div className="items-container">
-      <div className="items-title">
-        <h1>Description</h1>
-      </div>
-      <div className="products">
+      <div className="itemProducts">
         <Description data={product} />
       </div>
       <button className="cartPageButtons" onClick={handleClick}>
